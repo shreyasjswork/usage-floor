@@ -1,5 +1,6 @@
 # Usage Floor
 
+[![CI](https://github.com/shreyasjswork/usage-floor/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyasjswork/usage-floor/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
