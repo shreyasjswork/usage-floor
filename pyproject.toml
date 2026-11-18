@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "usage-floor"
+version = "0.1.0"
+description = "Keep a usage reserve on each AI subscription plan used by T3 Code agents, and park agents when it is reached."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Shreyas J S" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = ["t3code", "ai-agents", "codex", "claude-code", "usage-limits", "quota"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/shreyasjswork/usage-floor"
+Issues = "https://github.com/shreyasjswork/usage-floor/issues"
+
+[project.scripts]
+usage-floor = "usage_floor.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/usage_floor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "BLE", "SIM", "PL", "RUF"]
+ignore = ["PLR2004", "PLR0913", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "PLR"]
